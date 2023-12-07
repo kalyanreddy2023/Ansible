@@ -1,1 +1,15 @@
-Hello madam
+---
+- name: Install and Start centos
+  hosts: all
+  become: yes
+
+  tasks:
+   - name: Install centos
+     apt:
+       name: centos
+       state: present
+
+   - name: Start centos
+     service:
+       name: centos
+       state: started
